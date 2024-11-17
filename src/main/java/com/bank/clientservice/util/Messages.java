@@ -11,7 +11,9 @@ public enum Messages {
     DELETED_SUCCESSFULLY("Se ha eliminado el registro correctamente"),
 
     INTERNAL_SERVER_ERROR("Error interno del servidor"),
-    DUPLICATE_KEY("Uno o más datos enviados ya existen en la base de datos");
+    DUPLICATE_KEY("Uno o más datos enviados ya existen en la base de datos"),
+
+    NOT_FOUND("El registro no existe");
 
     private final String message;
 }

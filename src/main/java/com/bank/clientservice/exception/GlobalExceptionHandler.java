@@ -17,7 +17,15 @@ public class GlobalExceptionHandler {
     public Mono<ResponseEntity<OperationResponse>> handleDuplicateKeyException(DuplicateKeyException e) {
         log.error("Duplicate key exception occurred", e);
         return Mono.just(new ResponseEntity<>(new OperationResponse(
-                Messages.DUPLICATE_KEY.getMessage(),
+                Messages.DUPLICATE_KEY,
                 HttpStatus.CONFLICT), HttpStatus.CONFLICT));
+    }
+
+    @ExceptionHandler(Exception.class)
+    public Mono<ResponseEntity<OperationResponse>> handleException(Exception e) {
+        log.error(e.getMessage(), e);
+        return Mono.just(new ResponseEntity<>(new OperationResponse(
+                Messages.INTERNAL_SERVER_ERROR,
+                HttpStatus.INTERNAL_SERVER_ERROR), HttpStatus.INTERNAL_SERVER_ERROR));
     }
 }

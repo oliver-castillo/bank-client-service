@@ -1,9 +1,9 @@
 package com.bank.clientservice.repository;
 
-import com.bank.clientservice.model.document.BusinessClientDocument;
+import com.bank.clientservice.model.document.BusinessClient;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BusinessClientRepository extends ReactiveMongoRepository<BusinessClientDocument, String> {
+public interface BusinessClientRepository extends ReactiveMongoRepository<BusinessClient, String> {
 }

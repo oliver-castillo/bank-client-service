@@ -9,14 +9,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @Getter
 @Setter
-@Document(collection = "personal_clients")
-public class PersonalClientDocument extends Client {
-    private String name;
+@Document(collection = "business_clients")
+public class BusinessClient extends Client {
+    private String companyName;
 
-    private String paternalSurname;
-
-    private String maternalSurname;
-    
     @Indexed(unique = true)
-    private String dni;
+    private String ruc;
 }

@@ -21,11 +21,4 @@ public class OperationResponse {
         this.code = httpStatus.value();
         this.timestamp = LocalDateTime.now();
     }
-
-    public OperationResponse(String message, HttpStatus httpStatus) {
-        this.message = message;
-        this.status = httpStatus.getReasonPhrase();
-        this.code = httpStatus.value();
-        this.timestamp = LocalDateTime.now();
-    }
 }
