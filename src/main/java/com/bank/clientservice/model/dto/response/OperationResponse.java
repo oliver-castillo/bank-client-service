@@ -1,6 +1,6 @@
 package com.bank.clientservice.model.dto.response;
 
-import com.bank.clientservice.util.Messages;
+import com.bank.clientservice.util.Message;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ public class OperationResponse {
     private Integer code;
     private LocalDateTime timestamp;
 
-    public OperationResponse(Messages message, HttpStatus httpStatus) {
+    public OperationResponse(Message message, HttpStatus httpStatus) {
         this.message = message.getMessage();
         this.status = httpStatus.getReasonPhrase();
         this.code = httpStatus.value();

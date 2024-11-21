@@ -1,7 +1,7 @@
 package com.bank.clientservice.exception;
 
 import com.bank.clientservice.model.dto.response.OperationResponse;
-import com.bank.clientservice.util.Messages;
+import com.bank.clientservice.util.Message;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
@@ -17,7 +17,7 @@ public class GlobalExceptionHandler {
     public Mono<ResponseEntity<OperationResponse>> handleDuplicateKeyException(DuplicateKeyException e) {
         log.error("Duplicate key exception occurred", e);
         return Mono.just(new ResponseEntity<>(new OperationResponse(
-                Messages.DUPLICATE_KEY,
+                Message.DUPLICATE_KEY,
                 HttpStatus.CONFLICT), HttpStatus.CONFLICT));
     }
 
@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
     public Mono<ResponseEntity<OperationResponse>> handleException(Exception e) {
         log.error(e.getMessage(), e);
         return Mono.just(new ResponseEntity<>(new OperationResponse(
-                Messages.INTERNAL_SERVER_ERROR,
+                Message.INTERNAL_SERVER_ERROR,
                 HttpStatus.INTERNAL_SERVER_ERROR), HttpStatus.INTERNAL_SERVER_ERROR));
     }
 }

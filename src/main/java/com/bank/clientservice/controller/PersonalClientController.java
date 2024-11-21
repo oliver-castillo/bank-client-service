@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(value = "clients/personal")
+@RequestMapping(value = "personal")
 public class PersonalClientController {
     private final ClientService<PersonalClientRequest, PersonalClientResponse> clientService;
 

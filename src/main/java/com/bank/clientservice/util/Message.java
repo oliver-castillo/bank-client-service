@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Getter
-public enum Messages {
+public enum Message {
     CREATED_SUCCESSFULLY("Se ha creado el registro correctamente"),
     UPDATED_SUCCESSFULLY("Se ha actualizado el registro correctamente"),
     DELETED_SUCCESSFULLY("Se ha eliminado el registro correctamente"),
