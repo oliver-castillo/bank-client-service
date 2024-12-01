@@ -20,12 +20,4 @@ public class GlobalExceptionHandler {
                 Message.DUPLICATE_KEY,
                 HttpStatus.CONFLICT), HttpStatus.CONFLICT));
     }
-
-    @ExceptionHandler(Exception.class)
-    public Mono<ResponseEntity<OperationResponse>> handleException(Exception e) {
-        log.error(e.getMessage(), e);
-        return Mono.just(new ResponseEntity<>(new OperationResponse(
-                Message.INTERNAL_SERVER_ERROR,
-                HttpStatus.INTERNAL_SERVER_ERROR), HttpStatus.INTERNAL_SERVER_ERROR));
-    }
 }
