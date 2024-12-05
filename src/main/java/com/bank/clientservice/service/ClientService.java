@@ -3,17 +3,18 @@ package com.bank.clientservice.service;
 import com.bank.clientservice.model.dto.request.ClientRequest;
 import com.bank.clientservice.model.dto.response.ClientResponse;
 import com.bank.clientservice.model.dto.response.OperationResponse;
+import com.bank.clientservice.model.enums.ClientType;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface ClientService<T extends ClientRequest, R extends ClientResponse> {
-    Mono<OperationResponse> save(T request);
+public interface ClientService {
+    Mono<OperationResponse> save(ClientRequest request);
 
-    Flux<R> findAll();
+    Flux<ClientResponse> findAllByType(ClientType type);
 
-    Mono<R> findById(String id);
+    Mono<ClientResponse> findById(String id);
 
-    Mono<OperationResponse> update(String id, T request);
+    Mono<OperationResponse> update(String id, ClientRequest request);
 
     Mono<OperationResponse> delete(String id);
 }
